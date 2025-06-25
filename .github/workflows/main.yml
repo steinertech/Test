@@ -21,6 +21,11 @@ jobs:
       - name: Run Hello World Script
         run: .github/workflows/hello.sh
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: App.Web/dist  # or your build output directory
+
       - name: Deploy to external repo
         uses: peaceiris/actions-gh-pages@v4
         with:
