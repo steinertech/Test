@@ -15,27 +15,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Checkout second repo
+        uses: actions/checkout@v4
+        with:
+          repository: steinertech/steinertech.github.io
+          path: pages
+
       - name: Make script executable
         run: chmod +x .github/workflows/hello.sh
 
       - name: Run Hello World Script
         run: .github/workflows/hello.sh
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: App.Web/dist  # or your build output directory
-
-  deploy:
-    needs: say-hello
-    runs-on: ubuntu-latest
-    permissions: # Set Build and deployment Source to GitHub Actions. See also https://github.com/steinertech/Test/settings/pages
-      id-token: write    
-      pages: write
-    environment:
-      name: github-pages
-      url: https://steinertech.github.io/
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4.0.5
