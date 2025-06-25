@@ -16,4 +16,4 @@ jobs:
         run: chmod +x ./hello.sh
 
       - name: Run Hello World Script
-        run: ./hello.sh
+        run: .github/workflows/static.yml
