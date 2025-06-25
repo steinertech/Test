@@ -33,3 +33,14 @@ jobs:
           external_repository: steinertech/steinertech.github.io
           publish_branch: gh-pages
           publish_dir: App.Web/dist
+
+  deploy:
+    needs: say-hello
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4.0.5
