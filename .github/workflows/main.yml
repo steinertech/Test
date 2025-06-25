@@ -17,6 +17,7 @@ jobs:
         with:
           repository: steinertech/steinertech.github.io
           path: pages
+          token: ${{ secrets.PAGES_PAT }}
 
       - name: Make script executable
         run: chmod +x .github/workflows/hello.sh
