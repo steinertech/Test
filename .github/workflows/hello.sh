@@ -2,8 +2,8 @@
 echo "Hello"
 cd pages
 echo "Hello" > a.txt
-git config user.name "github-actions"
-git config user.email "github-actions@github.com"
+git config user.name "SteinerTech"
+git config user.email "205841367+steinertech@users.noreply.github.com"
 git add .
 git commit -m "Publish"
 git push
