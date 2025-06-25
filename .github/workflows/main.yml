@@ -38,7 +38,8 @@ jobs:
     needs: say-hello
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
+      pages: write
       id-token: write
     steps:
       - name: Deploy to GitHub Pages
