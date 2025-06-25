@@ -26,14 +26,6 @@ jobs:
         with:
           path: App.Web/dist  # or your build output directory
 
-      - name: Deploy to external repo
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }} # See also https://github.com/settings/personal-access-tokens and https://github.com/steinertech/Test/settings/secrets/actions 
-          external_repository: steinertech/steinertech.github.io
-          publish_branch: gh-pages
-          publish_dir: App.Web/dist
-
   deploy:
     needs: say-hello
     runs-on: ubuntu-latest
